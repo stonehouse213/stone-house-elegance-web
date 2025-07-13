@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import graniteImage from "@/assets/granite-slab.jpg";
 import marbleImage from "@/assets/marble-slab.jpg";
 import quartziteImage from "@/assets/quartzite-slab.jpg";
@@ -86,8 +87,9 @@ const MaterialsSection = () => {
                   <Button 
                     variant="outline" 
                     className="w-full group-hover:bg-secondary group-hover:text-secondary-foreground transition-all duration-300"
+                    asChild
                   >
-                    Discover Collection
+                    <Link to="/collection">Discover Collection</Link>
                   </Button>
                 </div>
               </div>
@@ -97,8 +99,8 @@ const MaterialsSection = () => {
 
         {/* CTA */}
         <div className="text-center mt-16">
-          <Button variant="luxury" size="lg">
-            View Complete Inventory
+          <Button variant="luxury" size="lg" asChild>
+            <Link to="/collection">View Complete Inventory</Link>
           </Button>
         </div>
       </div>

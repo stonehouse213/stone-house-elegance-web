@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import kitchenImage from "@/assets/inspiration-kitchen.jpg";
 import bathroomImage from "@/assets/inspiration-bathroom.jpg";
 import commercialImage from "@/assets/inspiration-commercial.jpg";
@@ -92,8 +93,8 @@ const InspirationSection = () => {
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <Button variant="luxury" size="lg">
-            View Project Portfolio
+          <Button variant="luxury" size="lg" asChild>
+            <Link to="/collection">View Project Portfolio</Link>
           </Button>
         </div>
       </div>

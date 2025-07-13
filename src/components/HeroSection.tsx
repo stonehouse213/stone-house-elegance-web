@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import heroBackground from "@/assets/hero-stone-slabs.jpg";
 
 const HeroSection = () => {
@@ -24,8 +25,8 @@ const HeroSection = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button variant="luxury" size="lg" className="min-w-48">
-            Explore Our Collection
+          <Button variant="luxury" size="lg" className="min-w-48" asChild>
+            <Link to="/collection">Explore Our Collection</Link>
           </Button>
           
           <Button variant="hero" size="lg" className="min-w-48">
