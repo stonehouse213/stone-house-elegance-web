@@ -4,91 +4,22 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Filter, Search } from "lucide-react";
 import { Link } from "react-router-dom";
-import graniteImage from "@/assets/granite-slab.jpg";
-import marbleImage from "@/assets/marble-slab.jpg";
-import quartziteImage from "@/assets/quartzite-slab.jpg";
-import exoticImage from "@/assets/exotic-stone-slab.jpg";
+import { useInventory } from "@/contexts/InventoryContext";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useConsultation } from "@/contexts/ConsultationContext";
+import SEO from "@/components/SEO";
 
 const Collection = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchTerm, setSearchTerm] = useState("");
+  const { stones } = useInventory();
+  const { addRequest } = useConsultation();
+  const [showDialog, setShowDialog] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const categories = ["All", "Granite", "Marble", "Quartzite", "Exotic Stones"];
-
-  const stones = [
-    {
-      id: 1,
-      name: "Absolute Black Granite",
-      category: "Granite",
-      origin: "India",
-      price: "$$",
-      image: graniteImage,
-      description: "Deep black granite with subtle speckled patterns",
-      features: ["Heat Resistant", "Scratch Resistant", "Low Maintenance"],
-      finish: "Polished",
-      thickness: "2cm, 3cm"
-    },
-    {
-      id: 2,
-      name: "Carrara White Marble",
-      category: "Marble",
-      origin: "Italy",
-      price: "$$$",
-      image: marbleImage,
-      description: "Classic white marble with elegant gray veining",
-      features: ["Timeless Beauty", "Unique Veining", "Premium Quality"],
-      finish: "Polished, Honed",
-      thickness: "2cm, 3cm"
-    },
-    {
-      id: 3,
-      name: "Arctic White Quartzite",
-      category: "Quartzite",
-      origin: "Brazil",
-      price: "$$$",
-      image: quartziteImage,
-      description: "Stunning white quartzite with dramatic veining patterns",
-      features: ["Ultra Durable", "Heat Resistant", "Natural Beauty"],
-      finish: "Polished",
-      thickness: "2cm, 3cm"
-    },
-    {
-      id: 4,
-      name: "Fusion Exotic",
-      category: "Exotic Stones",
-      origin: "Brazil",
-      price: "$$$$",
-      image: exoticImage,
-      description: "Rare exotic stone with unique geological patterns",
-      features: ["One-of-a-Kind", "Conversation Piece", "Investment Grade"],
-      finish: "Polished, Leathered",
-      thickness: "2cm, 3cm"
-    },
-    {
-      id: 5,
-      name: "Kashmir White Granite",
-      category: "Granite",
-      origin: "India",
-      price: "$$",
-      image: graniteImage,
-      description: "Light granite with burgundy and gold accents",
-      features: ["Warm Tones", "Durable", "Versatile"],
-      finish: "Polished, Honed",
-      thickness: "2cm, 3cm"
-    },
-    {
-      id: 6,
-      name: "Calacatta Gold Marble",
-      category: "Marble",
-      origin: "Italy",
-      price: "$$$$",
-      image: marbleImage,
-      description: "Luxurious marble with bold gold veining",
-      features: ["Premium Grade", "Bold Patterns", "Luxury Appeal"],
-      finish: "Polished",
-      thickness: "2cm, 3cm"
-    }
-  ];
 
   const filteredStones = stones.filter(stone => {
     const matchesCategory = selectedCategory === "All" || stone.category === selectedCategory;
@@ -106,8 +37,54 @@ const Collection = () => {
     return priceMap[price] || price;
   };
 
+  const handleConsultationSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    addRequest({
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      phone: formData.get('phone') as string,
+      message: formData.get('message') as string,
+    });
+    setShowDialog(false);
+    setSuccess(true);
+    setTimeout(() => setSuccess(false), 4000);
+    e.currentTarget.reset();
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Granite Slabs New Jersey | Stone House Collection for Fabricators & Contractors"
+        description="Browse Stone House's curated collection of granite slabs in New Jersey. Perfect for fabricators, contractors, and developers. Premium granite, marble, and quartzite for all NJ projects."
+        keywords="granite slabs New Jersey, NJ granite collection, granite for fabricators NJ, granite for contractors NJ, granite supplier NJ, stone slabs NJ, marble slabs NJ, quartzite slabs NJ, granite Newark NJ, granite wholesale NJ"
+        schema={{
+          '@context': 'https://schema.org',
+          '@type': 'CollectionPage',
+          name: 'Granite Slab Collection - Stone House NJ',
+          description: 'Premium granite, marble, and quartzite slabs for fabricators, contractors, and developers in New Jersey.',
+          hasPart: stones.map(stone => ({
+            '@type': 'Product',
+            name: stone.name,
+            description: stone.description,
+            brand: 'Stone House',
+            category: stone.category,
+            offers: {
+              '@type': 'Offer',
+              availability: 'https://schema.org/InStock',
+              priceCurrency: 'USD',
+              price: stone.price.replace(/\$/g, '').length * 100, // fake price for SEO
+            },
+            url: 'https://stonehousegranite.com/collection',
+            image: stone.image,
+          }))
+        }}
+      />
+      {/* SEO-optimized H1 and intro */}
+      <div className="max-w-7xl mx-auto px-6 py-8">
+        <h1 className="text-3xl font-bold text-foreground mb-2">Granite Slabs for Fabricators, Contractors & Developers in New Jersey</h1>
+        <p className="text-lg text-muted-foreground mb-6">Explore our premium selection of granite, marble, and quartzite slabs—trusted by New Jersey’s top fabricators, contractors, and developers. Fast delivery across NJ. Trade pricing available.</p>
+      </div>
       
       {/* Header */}
       <div className="bg-gradient-card border-b border-border">
@@ -179,9 +156,13 @@ const Collection = () => {
               {/* Image */}
               <div className="relative h-64 overflow-hidden">
                 <img 
-                  src={stone.image} 
-                  alt={stone.name}
+                  src={stone.image}
+                  alt={`${stone.name} ${stone.finish} granite slab New Jersey`}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  onError={(e) => {
+                    // Fallback to a placeholder if image fails to load
+                    (e.target as HTMLImageElement).src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='16' fill='%236b7280'%3ENo Image%3C/text%3E%3C/svg%3E";
+                  }}
                 />
                 
                 {/* Price Badge */}
@@ -235,16 +216,57 @@ const Collection = () => {
                     <span>Thickness:</span>
                     <span className="text-foreground">{stone.thickness}</span>
                   </div>
+                  <div className="flex justify-between">
+                    <span>Grade:</span>
+                    <span className="text-foreground">{stone.grade}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Available Qty:</span>
+                    <span className="text-foreground">{stone.availableQty} sqft</span>
+                  </div>
                 </div>
 
                 {/* Actions */}
                 <div className="space-y-3">
-                  <Button className="w-full" variant="luxury">
-                    Request Sample
-                  </Button>
+                  <Dialog open={showDialog} onOpenChange={setShowDialog}>
+                    <DialogTrigger asChild>
+                      <Button className="w-full" variant="luxury">
+                        Request Consultation
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent>
+                      <DialogHeader>
+                        <DialogTitle>Request a Consultation</DialogTitle>
+                      </DialogHeader>
+                      <form className="space-y-4" onSubmit={handleConsultationSubmit}>
+                        <div>
+                          <label className="text-sm font-medium">Name</label>
+                          <Input name="name" required />
+                        </div>
+                        <div>
+                          <label className="text-sm font-medium">Email</label>
+                          <Input name="email" type="email" required />
+                        </div>
+                        <div>
+                          <label className="text-sm font-medium">Phone (optional)</label>
+                          <Input name="phone" />
+                        </div>
+                        <div>
+                          <label className="text-sm font-medium">Message</label>
+                          <Textarea name="message" required />
+                        </div>
+                        <div className="flex justify-end">
+                          <Button type="submit">Submit</Button>
+                        </div>
+                      </form>
+                    </DialogContent>
+                  </Dialog>
                   <Button className="w-full" variant="outline">
                     View Details
                   </Button>
+                  {success && (
+                    <div className="text-green-600 text-sm text-center mt-2">Thank you! Your request has been submitted.</div>
+                  )}
                 </div>
               </div>
             </Card>

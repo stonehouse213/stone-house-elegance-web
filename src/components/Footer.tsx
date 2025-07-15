@@ -1,4 +1,5 @@
 import { MapPin, Phone, Mail, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -110,6 +111,9 @@ const Footer = () => {
               <a href="#" className="text-muted-foreground hover:text-secondary transition-colors">
                 Sustainability
               </a>
+              <Link to="/admin-login" className="text-muted-foreground hover:text-secondary transition-colors">
+                Admin
+              </Link>
             </div>
           </div>
         </div>
