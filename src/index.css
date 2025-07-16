@@ -55,9 +55,9 @@ All colors MUST be HSL.
     --shadow-glow: 0 0 40px hsl(45 85% 55% / 0.2);
 
     /* Responsive Typography scale - Mobile First */
-    --font-hero: clamp(2.5rem, 8vw, 4.5rem);
-    --font-heading: clamp(2rem, 6vw, 3rem);
-    --font-subheading: clamp(1.125rem, 4vw, 1.5rem);
+    --font-hero: clamp(2rem, 6vw, 4.5rem);
+    --font-heading: clamp(1.75rem, 5vw, 3rem);
+    --font-subheading: clamp(1rem, 3vw, 1.5rem);
     --font-body: clamp(0.875rem, 2.5vw, 1rem);
     
     /* Responsive spacing */
