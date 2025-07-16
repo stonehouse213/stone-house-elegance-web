@@ -82,23 +82,7 @@ const Collection = () => {
       />
 
       
-      {/* Header */}
-      <div className="bg-gradient-card border-b border-border">
-        <div className="max-w-7xl mx-auto container-padding py-6 lg:py-8">
-          <div className="flex items-center justify-between mb-4 lg:mb-6">
-            <Link to="/" className="flex items-center text-muted-foreground hover:text-foreground transition-colors">
-              <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-              <span className="text-sm sm:text-base">Back to Home</span>
-            </Link>
-          </div>
-          
-          <h2 className="text-responsive-heading text-foreground mb-3 lg:mb-4">Stone Collection</h2>
-          <p className="text-responsive-subheading text-muted-foreground max-w-3xl">
-            Explore our curated selection of premium natural stones. Each piece is carefully selected 
-            for its exceptional quality, unique character, and architectural potential.
-          </p>
-        </div>
-      </div>
+
 
       <div className="max-w-7xl mx-auto container-padding py-8 lg:py-12">
         
