@@ -80,11 +80,7 @@ const Collection = () => {
           }))
         }}
       />
-      {/* SEO-optimized H1 and intro */}
-      <div className="max-w-7xl mx-auto container-padding py-6 lg:py-8">
-        <h1 className="text-responsive-heading text-foreground mb-2">Granite Slabs for Fabricators, Contractors & Developers in New Jersey</h1>
-        <p className="text-responsive-subheading text-muted-foreground mb-4 lg:mb-6">Explore our premium selection of granite, marble, quartz, and quartzite slabs—trusted by New Jersey's top fabricators, contractors, and developers. Fast delivery across NJ. Trade pricing available.</p>
-      </div>
+
       
       {/* Header */}
       <div className="bg-gradient-card border-b border-border">
