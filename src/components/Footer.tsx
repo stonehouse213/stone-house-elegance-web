@@ -11,10 +11,10 @@ const Footer = () => {
           
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-xl sm:text-2xl font-bold text-secondary">Stone House</h3>
+            <h3 className="text-xl sm:text-2xl font-bold text-secondary">Stone House Materials</h3>
             <p className="text-sm lg:text-base text-muted-foreground leading-relaxed">
-              Curating the world's finest natural stone materials for architects, 
-              designers, and luxury homeowners since 2003.
+              Wholesale stone slab supplier serving fabricators, contractors, and developers across the U.S. 
+              Premium Indian and Brazilian granite, marble, and quartzite.
             </p>
             <div className="flex space-x-4">
               <Facebook className="w-5 h-5 text-muted-foreground hover:text-secondary transition-colors cursor-pointer" />
@@ -28,9 +28,9 @@ const Footer = () => {
             <h4 className="text-base sm:text-lg font-semibold text-foreground">Explore</h4>
             <ul className="space-y-2">
               {[
-                "Material Collection",
-                "Inspiration Gallery", 
-                "Project Portfolio"
+                "Stone Collection",
+                "Pricing & Availability", 
+                "B2B Credit Terms"
               ].map((link) => (
                 <li key={link}>
                   <a 
@@ -49,11 +49,11 @@ const Footer = () => {
             <h4 className="text-base sm:text-lg font-semibold text-foreground">Materials</h4>
             <ul className="space-y-2">
               {[
-                "Granite",
-                "Marble",
-                "Quartz",
+                "Indian Granite",
+                "Brazilian Marble",
                 "Quartzite",
-                "Custom Selections"
+                "Sample Packs",
+                "Custom Orders"
               ].map((material) => (
                 <li key={material}>
                   <a 
@@ -74,8 +74,8 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-secondary mt-1 flex-shrink-0" />
                 <div className="text-xs sm:text-sm lg:text-base text-muted-foreground">
-                  <div>1234 Stone Avenue</div>
-                  <div>Design District, City 12345</div>
+                  <div>U.S. Warehouse</div>
+                  <div>Coming Fall 2025</div>
                 </div>
               </div>
               
@@ -86,7 +86,7 @@ const Footer = () => {
               
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-secondary flex-shrink-0" />
-                <span className="text-xs sm:text-sm lg:text-base text-muted-foreground">info@stonehouse.com</span>
+                <span className="text-xs sm:text-sm lg:text-base text-muted-foreground">sales@stonehousematerials.com</span>
               </div>
             </div>
           </div>
@@ -96,7 +96,7 @@ const Footer = () => {
         <div className="pt-6 lg:pt-8 border-t border-border">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
             <div className="text-xs sm:text-sm text-muted-foreground text-center sm:text-left">
-              © 2024 Stone House. All rights reserved. Curating excellence since 2003.
+              © 2024 Stone House Materials. All rights reserved. U.S. warehouse opening Fall 2025.
             </div>
             
             <div className="flex flex-wrap justify-center sm:justify-end gap-4 sm:gap-6 text-xs sm:text-sm">
@@ -107,7 +107,7 @@ const Footer = () => {
                 Terms of Service
               </a>
               <a href="#" className="text-muted-foreground hover:text-secondary transition-colors">
-                Sustainability
+                B2B Terms
               </a>
               <Link to="/admin-login" className="text-muted-foreground hover:text-secondary transition-colors">
                 Admin

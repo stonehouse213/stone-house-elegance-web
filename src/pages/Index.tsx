@@ -1,4 +1,6 @@
 import HeroSection from "@/components/HeroSection";
+import TrustSection from "@/components/TrustSection";
+import StoneGallery from "@/components/StoneGallery";
 import AboutSection from "@/components/AboutSection";
 import MaterialsSection from "@/components/MaterialsSection";
 import InspirationSection from "@/components/InspirationSection";
@@ -10,23 +12,22 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Stone House | New Jersey Granite Supplier for Fabricators, Contractors & Developers"
-        description="Stone House is New Jersey's premier granite supplier for fabricators, contractors, and developers. Wholesale granite slabs, quartzite, marble, and exotic stones. Serving all of NJ and the Tri-State area."
-        keywords="granite supplier New Jersey, NJ granite slabs, granite fabricators NJ, granite contractors NJ, wholesale granite New Jersey, stone supplier NJ, marble slabs NJ, quartzite NJ, granite for developers NJ, granite for contractors NJ, granite for fabricators NJ, stone house granite"
+        title="Stone House Materials | Wholesale Stone Slab Supplier – Granite, Marble & Quartzite"
+        description="We supply premium Indian and Brazilian slabs to fabricators, contractors, and builders. U.S. warehouse stock available now. Fast delivery, flexible terms."
+        keywords="wholesale stone slabs, granite supplier, marble supplier, quartzite supplier, stone slabs for fabricators, stone slabs for contractors, Indian granite, Brazilian marble, U.S. stone warehouse, stone slab pricing, stone slab availability, stone house materials"
         schema={{
           '@context': 'https://schema.org',
           '@type': 'LocalBusiness',
-          name: 'Stone House',
+          name: 'Stone House Materials',
           image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&h=600&fit=crop',
-          '@id': 'https://stonehousegranite.com',
-          url: 'https://stonehousegranite.com',
+          '@id': 'https://stonehousematerials.com',
+          url: 'https://stonehousematerials.com',
           telephone: '(555) 123-STONE',
           address: {
             '@type': 'PostalAddress',
-            streetAddress: '1234 Stone Avenue',
-            addressLocality: 'Newark',
-            addressRegion: 'NJ',
-            postalCode: '07101',
+            streetAddress: 'U.S. Warehouse - Coming Fall 2025',
+            addressLocality: 'TBA',
+            addressRegion: 'US',
             addressCountry: 'US',
           },
           geo: {
@@ -37,7 +38,7 @@ const Index = () => {
           openingHoursSpecification: [{
             '@type': 'OpeningHoursSpecification',
             dayOfWeek: [
-              'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'
+              'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'
             ],
             opens: '08:00',
             closes: '18:00',
@@ -50,33 +51,47 @@ const Index = () => {
         }}
       />
       <HeroSection />
+      <TrustSection />
+      <StoneGallery />
       <AboutSection />
       <MaterialsSection />
       <InspirationSection />
       <ContactSection />
-      {/* SEO-optimized FAQ section for NJ granite supply */}
-      <section className="max-w-4xl mx-auto px-4 py-12">
-        <h2 className="text-2xl font-bold mb-6">New Jersey Granite Supply FAQ</h2>
-        <div className="space-y-6">
-          <div>
-            <h3 className="font-semibold">Where can I buy wholesale granite slabs in New Jersey?</h3>
-            <p>Stone House is a leading wholesale granite supplier in New Jersey, serving fabricators, contractors, and developers with a wide selection of premium granite, marble, quartz, and quartzite slabs.</p>
-          </div>
-          <div>
-            <h3 className="font-semibold">Do you deliver granite slabs to job sites in NJ?</h3>
-            <p>Yes! We deliver granite, marble, quartz, and quartzite slabs throughout New Jersey and the Tri-State area, directly to your fabrication shop or job site.</p>
-          </div>
-          <div>
-            <h3 className="font-semibold">What types of stone do you stock?</h3>
-            <p>We stock a curated selection of granite, marble, quartz, and quartzite, perfect for countertops, flooring, and all your project needs in NJ.</p>
-          </div>
-          <div>
-            <h3 className="font-semibold">Why choose Stone House for granite in New Jersey?</h3>
-            <p>We are trusted by New Jersey’s top fabricators, contractors, and developers for our quality, service, and deep inventory of premium granite, marble, quartz, and quartzite slabs.</p>
+      <Footer />
+      {/* SEO-optimized FAQ section for stone supply */}
+      <section className="section-padding container-padding bg-gradient-card">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-responsive-heading text-foreground mb-8 text-center">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-lg font-semibold text-foreground mb-2">What stone types do you supply?</h3>
+              <p className="text-muted-foreground">We supply premium granite, marble, and quartzite slabs sourced directly from India and Brazil. Our inventory includes popular varieties like Black Galaxy Granite, Carrara Marble, and White Quartzite.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-foreground mb-2">Do you offer B2B credit terms?</h3>
+              <p className="text-muted-foreground">Yes, we offer flexible B2B credit terms for qualified fabricators, contractors, and developers. Contact our sales team to discuss credit options and qualification requirements.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-foreground mb-2">When will your U.S. warehouse open?</h3>
+              <p className="text-muted-foreground">Our U.S. warehouse is scheduled to open in Fall 2025. Join our waitlist to get priority access to inventory and special opening pricing.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-foreground mb-2">How quickly can you deliver?</h3>
+              <p className="text-muted-foreground">We offer fast delivery across the U.S. Current lead times vary by location and quantity. Contact us for specific delivery timelines for your project.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-foreground mb-2">Do you provide samples?</h3>
+              <p className="text-muted-foreground">Yes, we offer sample packs for qualified buyers. Request a sample pack through our contact form to evaluate our stone quality and finishes.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-foreground mb-2">What are your minimum order quantities?</h3>
+              <p className="text-muted-foreground">We work with projects of all sizes, from small residential jobs to large commercial developments. Contact our sales team to discuss your specific requirements and pricing.</p>
+            </div>
           </div>
         </div>
       </section>
-      <Footer />
     </div>
   );
 };

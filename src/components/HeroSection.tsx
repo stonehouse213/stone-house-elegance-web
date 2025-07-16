@@ -3,6 +3,13 @@ import { Link } from "react-router-dom";
 import heroBackground from "@/assets/hero-stone-slabs.jpg";
 
 const HeroSection = () => {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact-section');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -16,12 +23,11 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 text-center container-padding max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-responsive-hero text-foreground mb-4 sm:mb-6 tracking-tight">
-          Curating the World's Finest Stone
+          Premium Indian & Brazilian Stone Slabs – In Stock & Ready to Ship
         </h1>
         
-        <p className="text-responsive-subheading text-foreground/90 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed px-2 sm:px-0">
-          Discover extraordinary natural stone materials that transform spaces into masterpieces. 
-          Premium granite, marble, quartz, and quartzite for discerning architects and designers.
+        <p className="text-responsive-subheading text-foreground/90 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
+          Stone House Materials supplies high-quality granite, marble, and quartzite slabs to fabricators, contractors, and developers across the U.S. With U.S. warehouse inventory and flexible B2B terms, we make sourcing stone fast and reliable.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4 sm:px-0">
@@ -29,17 +35,18 @@ const HeroSection = () => {
             variant="luxury" 
             size="lg" 
             className="w-full sm:w-auto min-w-[200px] sm:min-w-48 h-12 sm:h-11 text-base sm:text-sm" 
-            asChild
+            onClick={scrollToContact}
           >
-            <Link to="/collection">Explore Our Collection</Link>
+            Request Sample Pack
           </Button>
           
           <Button 
             variant="hero" 
             size="lg" 
             className="w-full sm:w-auto min-w-[200px] sm:min-w-48 h-12 sm:h-11 text-base sm:text-sm"
+            asChild
           >
-            Request Consultation
+            <Link to="/collection">View Our Collection</Link>
           </Button>
         </div>
       </div>
