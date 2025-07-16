@@ -104,7 +104,7 @@ const AdminPanel = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pt-16 lg:pt-20">
       {/* Header */}
       <div className="bg-gradient-card border-b border-border">
         <div className="max-w-7xl mx-auto container-padding py-6 lg:py-8">

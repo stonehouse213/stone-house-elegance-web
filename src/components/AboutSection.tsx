@@ -1,6 +1,6 @@
 const AboutSection = () => {
   return (
-    <section className="section-padding container-padding bg-gradient-card">
+    <section id="about-section" className="section-padding container-padding bg-gradient-card">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           

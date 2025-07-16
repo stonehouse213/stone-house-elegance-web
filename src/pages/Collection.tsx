@@ -53,7 +53,7 @@ const Collection = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pt-16 lg:pt-20">
       <SEO
         title="Granite Slabs New Jersey | Stone House Collection for Fabricators & Contractors"
         description="Browse Stone House's curated collection of granite slabs in New Jersey. Perfect for fabricators, contractors, and developers. Premium granite, marble, quartz, and quartzite for all NJ projects."

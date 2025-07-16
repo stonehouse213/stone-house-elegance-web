@@ -79,6 +79,13 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
     font-size: var(--font-body);
     line-height: 1.6;
+    padding-top: 4rem; /* 64px for mobile */
+  }
+
+  @media (min-width: 1024px) {
+    body {
+      padding-top: 5rem; /* 80px for desktop */
+    }
   }
 
   /* Responsive container improvements */

@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { InventoryProvider } from "@/contexts/InventoryContext";
 import { ConsultationProvider } from "@/contexts/ConsultationContext";
+import Header from "./components/Header";
 import Index from "./pages/Index";
 import Collection from "./pages/Collection";
 import AdminLogin from "./pages/AdminLogin";
@@ -23,6 +24,7 @@ const App = () => (
           <Toaster />
           <Sonner />
           <BrowserRouter>
+            <Header />
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/collection" element={<Collection />} />

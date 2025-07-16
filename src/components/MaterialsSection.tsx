@@ -34,7 +34,7 @@ const MaterialsSection = () => {
   ];
 
   return (
-    <section className="section-padding container-padding bg-background">
+    <section id="materials-section" className="section-padding container-padding bg-background">
       <div className="max-w-7xl mx-auto">
         
         {/* Header */}
