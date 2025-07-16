@@ -13,14 +13,11 @@ const AboutSection = () => {
               
               <div className="space-y-6 text-lg text-foreground/80 leading-relaxed">
                 <p>
-                  For over two decades, Stone House has been the trusted partner for architects, 
-                  designers, and luxury homeowners seeking the world's most exceptional natural stone materials.
+                  For over two decades, Stone House has been the trusted partner for architects, designers, fabricators, and luxury homeowners seeking the world's most exceptional natural stone materials.
                 </p>
                 
                 <p>
-                  Our curated collection features premium granite, marble, quartzite, and exotic stones 
-                  sourced from the finest quarries worldwide. Each slab is carefully selected for its 
-                  unique character, superior quality, and architectural potential.
+                  Our curated collection features premium granite, marble, quartz, and quartzite sourced from the finest quarries worldwide. Each slab is carefully selected for its unique character, superior quality, and architectural potential.
                 </p>
                 
                 <p>

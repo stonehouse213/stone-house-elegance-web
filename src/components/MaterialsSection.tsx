@@ -20,16 +20,16 @@ const MaterialsSection = () => {
       features: ["Luxurious Veining", "Timeless Appeal", "Premium Quality"]
     },
     {
+      title: "Quartz",
+      description: "Modern, non-porous, and low-maintenance. Quartz surfaces are perfect for contemporary spaces and high-traffic areas.",
+      image: quartziteImage,
+      features: ["Non-Porous", "Low Maintenance", "Contemporary Look"]
+    },
+    {
       title: "Quartzite",
       description: "Natural strength with stunning aesthetics. Quartzite combines durability with breathtaking natural patterns.",
       image: quartziteImage,
       features: ["Ultra Durable", "Low Maintenance", "Natural Beauty"]
-    },
-    {
-      title: "Exotic Stones",
-      description: "Rare and extraordinary materials from around the world. Unique stones that create truly one-of-a-kind spaces.",
-      image: exoticImage,
-      features: ["One-of-a-Kind", "Rare Materials", "Stunning Patterns"]
     }
   ];
 

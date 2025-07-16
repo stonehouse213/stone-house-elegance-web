@@ -60,23 +60,19 @@ const Index = () => {
         <div className="space-y-6">
           <div>
             <h3 className="font-semibold">Where can I buy wholesale granite slabs in New Jersey?</h3>
-            <p>Stone House is a leading wholesale granite supplier in New Jersey, serving fabricators, contractors, and developers with a wide selection of premium granite, marble, and quartzite slabs.</p>
+            <p>Stone House is a leading wholesale granite supplier in New Jersey, serving fabricators, contractors, and developers with a wide selection of premium granite, marble, quartz, and quartzite slabs.</p>
           </div>
           <div>
             <h3 className="font-semibold">Do you deliver granite slabs to job sites in NJ?</h3>
-            <p>Yes! We deliver granite, marble, and quartzite slabs throughout New Jersey and the Tri-State area, directly to your fabrication shop or job site.</p>
-          </div>
-          <div>
-            <h3 className="font-semibold">Can contractors and developers get trade pricing?</h3>
-            <p>Absolutely. We offer special trade pricing for fabricators, contractors, and developers in New Jersey. Contact us for a quote on your next project.</p>
+            <p>Yes! We deliver granite, marble, quartz, and quartzite slabs throughout New Jersey and the Tri-State area, directly to your fabrication shop or job site.</p>
           </div>
           <div>
             <h3 className="font-semibold">What types of stone do you stock?</h3>
-            <p>We stock a curated selection of granite, marble, quartzite, and exotic stones, perfect for countertops, flooring, and custom fabrication projects in NJ.</p>
+            <p>We stock a curated selection of granite, marble, quartz, and quartzite, perfect for countertops, flooring, and all your project needs in NJ.</p>
           </div>
           <div>
             <h3 className="font-semibold">Why choose Stone House for granite in New Jersey?</h3>
-            <p>We are trusted by New Jersey’s top fabricators, contractors, and developers for our quality, service, and deep inventory of premium stone slabs.</p>
+            <p>We are trusted by New Jersey’s top fabricators, contractors, and developers for our quality, service, and deep inventory of premium granite, marble, quartz, and quartzite slabs.</p>
           </div>
         </div>
       </section>

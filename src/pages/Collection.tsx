@@ -19,7 +19,7 @@ const Collection = () => {
   const [showDialog, setShowDialog] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  const categories = ["All", "Granite", "Marble", "Quartzite", "Exotic Stones"];
+  const categories = ["All", "Granite", "Marble", "Quartz", "Quartzite"];
 
   const filteredStones = stones.filter(stone => {
     const matchesCategory = selectedCategory === "All" || stone.category === selectedCategory;
@@ -56,13 +56,13 @@ const Collection = () => {
     <div className="min-h-screen bg-background">
       <SEO
         title="Granite Slabs New Jersey | Stone House Collection for Fabricators & Contractors"
-        description="Browse Stone House's curated collection of granite slabs in New Jersey. Perfect for fabricators, contractors, and developers. Premium granite, marble, and quartzite for all NJ projects."
-        keywords="granite slabs New Jersey, NJ granite collection, granite for fabricators NJ, granite for contractors NJ, granite supplier NJ, stone slabs NJ, marble slabs NJ, quartzite slabs NJ, granite Newark NJ, granite wholesale NJ"
+        description="Browse Stone House's curated collection of granite slabs in New Jersey. Perfect for fabricators, contractors, and developers. Premium granite, marble, quartz, and quartzite for all NJ projects."
+        keywords="granite slabs New Jersey, NJ granite collection, granite for fabricators NJ, granite for contractors NJ, granite supplier NJ, stone slabs NJ, marble slabs NJ, quartz slabs NJ, quartzite slabs NJ, granite Newark NJ, granite wholesale NJ"
         schema={{
           '@context': 'https://schema.org',
           '@type': 'CollectionPage',
           name: 'Granite Slab Collection - Stone House NJ',
-          description: 'Premium granite, marble, and quartzite slabs for fabricators, contractors, and developers in New Jersey.',
+          description: 'Premium granite, marble, quartz, and quartzite slabs for fabricators, contractors, and developers in New Jersey.',
           hasPart: stones.map(stone => ({
             '@type': 'Product',
             name: stone.name,
@@ -83,7 +83,7 @@ const Collection = () => {
       {/* SEO-optimized H1 and intro */}
       <div className="max-w-7xl mx-auto px-6 py-8">
         <h1 className="text-3xl font-bold text-foreground mb-2">Granite Slabs for Fabricators, Contractors & Developers in New Jersey</h1>
-        <p className="text-lg text-muted-foreground mb-6">Explore our premium selection of granite, marble, and quartzite slabs—trusted by New Jersey’s top fabricators, contractors, and developers. Fast delivery across NJ. Trade pricing available.</p>
+        <p className="text-lg text-muted-foreground mb-6">Explore our premium selection of granite, marble, quartz, and quartzite slabs—trusted by New Jersey’s top fabricators, contractors, and developers. Fast delivery across NJ. Trade pricing available.</p>
       </div>
       
       {/* Header */}

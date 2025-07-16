@@ -30,9 +30,7 @@ const Footer = () => {
               {[
                 "Material Collection",
                 "Inspiration Gallery", 
-                "Project Portfolio",
-                "Design Services",
-                "Custom Fabrication"
+                "Project Portfolio"
               ].map((link) => (
                 <li key={link}>
                   <a 
@@ -51,10 +49,10 @@ const Footer = () => {
             <h4 className="text-lg font-semibold text-foreground">Materials</h4>
             <ul className="space-y-2">
               {[
-                "Premium Granite",
-                "Luxury Marble",
-                "Natural Quartzite",
-                "Exotic Stones",
+                "Granite",
+                "Marble",
+                "Quartz",
+                "Quartzite",
                 "Custom Selections"
               ].map((material) => (
                 <li key={material}>

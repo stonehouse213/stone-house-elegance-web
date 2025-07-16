@@ -16,7 +16,7 @@ const Blog = () => (
       </article>
       <article className="mb-10">
         <h2 className="text-xl font-semibold mb-2">2. Popular Granite Colors for Developers in 2024</h2>
-        <p>Absolute Black, Colonial White, and Fantasy Brown remain top choices for New Jersey developers. These colors offer timeless appeal and durability for both residential and commercial projects.</p>
+        <p>Absolute Black, Colonial White, and Fantasy Brown remain top choices for New Jersey developers. These colors offer timeless appeal and durability for both residential and commercial projects. We also offer a wide selection of marble, quartz, and quartzite.</p>
       </article>
       <article className="mb-10">
         <h2 className="text-xl font-semibold mb-2">3. Why Fabricators Choose Local NJ Suppliers</h2>

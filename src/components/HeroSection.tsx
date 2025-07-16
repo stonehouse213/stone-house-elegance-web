@@ -21,7 +21,7 @@ const HeroSection = () => {
         
         <p className="text-subheading text-foreground/90 mb-8 max-w-2xl mx-auto leading-relaxed">
           Discover extraordinary natural stone materials that transform spaces into masterpieces. 
-          Premium granite, marble, and exotic stones for discerning architects and designers.
+          Premium granite, marble, quartz, and quartzite for discerning architects and designers.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

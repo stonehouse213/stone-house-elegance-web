@@ -78,9 +78,6 @@ const ContactSection = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
                   "Stone Selection Consultation",
-                  "Custom Fabrication",
-                  "Installation Coordination", 
-                  "Design Partnership",
                   "Project Management",
                   "Delivery Services"
                 ].map((service) => (
