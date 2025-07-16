@@ -81,49 +81,52 @@ const Collection = () => {
         }}
       />
       {/* SEO-optimized H1 and intro */}
-      <div className="max-w-7xl mx-auto px-6 py-8">
-        <h1 className="text-3xl font-bold text-foreground mb-2">Granite Slabs for Fabricators, Contractors & Developers in New Jersey</h1>
-        <p className="text-lg text-muted-foreground mb-6">Explore our premium selection of granite, marble, quartz, and quartzite slabs—trusted by New Jersey’s top fabricators, contractors, and developers. Fast delivery across NJ. Trade pricing available.</p>
+      <div className="max-w-7xl mx-auto container-padding py-6 lg:py-8">
+        <h1 className="text-responsive-heading text-foreground mb-2">Granite Slabs for Fabricators, Contractors & Developers in New Jersey</h1>
+        <p className="text-responsive-subheading text-muted-foreground mb-4 lg:mb-6">Explore our premium selection of granite, marble, quartz, and quartzite slabs—trusted by New Jersey's top fabricators, contractors, and developers. Fast delivery across NJ. Trade pricing available.</p>
       </div>
       
       {/* Header */}
       <div className="bg-gradient-card border-b border-border">
-        <div className="max-w-7xl mx-auto px-6 py-8">
-          <div className="flex items-center justify-between mb-6">
+        <div className="max-w-7xl mx-auto container-padding py-6 lg:py-8">
+          <div className="flex items-center justify-between mb-4 lg:mb-6">
             <Link to="/" className="flex items-center text-muted-foreground hover:text-foreground transition-colors">
-              <ArrowLeft className="w-5 h-5 mr-2" />
-              Back to Home
+              <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+              <span className="text-sm sm:text-base">Back to Home</span>
             </Link>
           </div>
           
-          <h1 className="text-heading text-foreground mb-4">Stone Collection</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl">
+          <h2 className="text-responsive-heading text-foreground mb-3 lg:mb-4">Stone Collection</h2>
+          <p className="text-responsive-subheading text-muted-foreground max-w-3xl">
             Explore our curated selection of premium natural stones. Each piece is carefully selected 
             for its exceptional quality, unique character, and architectural potential.
           </p>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 py-12">
+      <div className="max-w-7xl mx-auto container-padding py-8 lg:py-12">
         
         {/* Filters & Search */}
-        <div className="flex flex-col lg:flex-row gap-6 mb-12">
+        <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 mb-8 lg:mb-12">
           
           {/* Search */}
           <div className="relative flex-1">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4 sm:w-5 sm:h-5" />
             <input
               type="text"
               placeholder="Search stones..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 bg-card border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+              className="w-full pl-10 pr-4 py-3 sm:py-3 bg-card border border-border rounded-lg text-sm sm:text-base text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
             />
           </div>
 
           {/* Category Filter */}
-          <div className="flex items-center gap-2">
-            <Filter className="w-5 h-5 text-muted-foreground" />
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2">
+            <div className="flex items-center gap-2">
+              <Filter className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground" />
+              <span className="text-sm font-medium text-foreground">Filter:</span>
+            </div>
             <div className="flex flex-wrap gap-2">
               {categories.map((category) => (
                 <Button
@@ -131,7 +134,7 @@ const Collection = () => {
                   variant={selectedCategory === category ? "secondary" : "outline"}
                   size="sm"
                   onClick={() => setSelectedCategory(category)}
-                  className="text-sm"
+                  className="text-xs sm:text-sm h-8 sm:h-9 px-2 sm:px-3"
                 >
                   {category}
                 </Button>
@@ -141,20 +144,20 @@ const Collection = () => {
         </div>
 
         {/* Results Count */}
-        <div className="mb-8">
-          <p className="text-muted-foreground">
+        <div className="mb-6 lg:mb-8">
+          <p className="text-sm sm:text-base text-muted-foreground">
             Showing {filteredStones.length} of {stones.length} stones
             {selectedCategory !== "All" && ` in ${selectedCategory}`}
           </p>
         </div>
 
         {/* Stone Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {filteredStones.map((stone) => (
             <Card key={stone.id} className="overflow-hidden group hover:shadow-luxury transition-all duration-500 transform hover:-translate-y-1">
               
               {/* Image */}
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden">
                 <img 
                   src={stone.image}
                   alt={`${stone.name} ${stone.finish} granite slab New Jersey`}
@@ -166,27 +169,27 @@ const Collection = () => {
                 />
                 
                 {/* Price Badge */}
-                <div className="absolute top-4 right-4">
-                  <Badge variant="secondary" className="bg-secondary/90 text-secondary-foreground">
+                <div className="absolute top-2 sm:top-4 right-2 sm:right-4">
+                  <Badge variant="secondary" className="bg-secondary/90 text-secondary-foreground text-xs">
                     {getPriceDisplay(stone.price)}
                   </Badge>
                 </div>
 
                 {/* Origin Badge */}
-                <div className="absolute top-4 left-4">
-                  <Badge variant="outline" className="bg-background/80 text-foreground border-border">
+                <div className="absolute top-2 sm:top-4 left-2 sm:left-4">
+                  <Badge variant="outline" className="bg-background/80 text-foreground border-border text-xs">
                     {stone.origin}
                   </Badge>
                 </div>
               </div>
 
               {/* Content */}
-              <div className="p-6">
-                <div className="mb-4">
-                  <h3 className="text-xl font-semibold text-foreground mb-2">
+              <div className="p-4 sm:p-6">
+                <div className="mb-3 sm:mb-4">
+                  <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-2">
                     {stone.name}
                   </h3>
-                  <p className="text-muted-foreground text-sm mb-3">
+                  <p className="text-xs sm:text-sm text-muted-foreground mb-3">
                     {stone.description}
                   </p>
                   <Badge variant="outline" className="text-xs">
@@ -195,8 +198,8 @@ const Collection = () => {
                 </div>
 
                 {/* Features */}
-                <div className="space-y-2 mb-4">
-                  <h4 className="text-sm font-medium text-foreground">Key Features</h4>
+                <div className="space-y-2 mb-3 sm:mb-4">
+                  <h4 className="text-xs sm:text-sm font-medium text-foreground">Key Features</h4>
                   <div className="flex flex-wrap gap-1">
                     {stone.features.map((feature) => (
                       <Badge key={feature} variant="outline" className="text-xs">
@@ -207,7 +210,7 @@ const Collection = () => {
                 </div>
 
                 {/* Details */}
-                <div className="space-y-2 mb-6 text-sm text-muted-foreground">
+                <div className="space-y-1 sm:space-y-2 mb-4 sm:mb-6 text-xs sm:text-sm text-muted-foreground">
                   <div className="flex justify-between">
                     <span>Finish:</span>
                     <span className="text-foreground">{stone.finish}</span>
@@ -227,45 +230,45 @@ const Collection = () => {
                 </div>
 
                 {/* Actions */}
-                <div className="space-y-3">
+                <div className="space-y-2 sm:space-y-3">
                   <Dialog open={showDialog} onOpenChange={setShowDialog}>
                     <DialogTrigger asChild>
-                      <Button className="w-full" variant="luxury">
+                      <Button className="w-full h-10 sm:h-11 text-sm" variant="luxury">
                         Request Consultation
                       </Button>
                     </DialogTrigger>
-                    <DialogContent>
+                    <DialogContent className="sm:max-w-md">
                       <DialogHeader>
-                        <DialogTitle>Request a Consultation</DialogTitle>
+                        <DialogTitle className="text-lg sm:text-xl">Request a Consultation</DialogTitle>
                       </DialogHeader>
                       <form className="space-y-4" onSubmit={handleConsultationSubmit}>
                         <div>
                           <label className="text-sm font-medium">Name</label>
-                          <Input name="name" required />
+                          <Input name="name" required className="h-10 sm:h-11" />
                         </div>
                         <div>
                           <label className="text-sm font-medium">Email</label>
-                          <Input name="email" type="email" required />
+                          <Input name="email" type="email" required className="h-10 sm:h-11" />
                         </div>
                         <div>
                           <label className="text-sm font-medium">Phone (optional)</label>
-                          <Input name="phone" />
+                          <Input name="phone" className="h-10 sm:h-11" />
                         </div>
                         <div>
                           <label className="text-sm font-medium">Message</label>
-                          <Textarea name="message" required />
+                          <Textarea name="message" required className="min-h-[80px]" />
                         </div>
                         <div className="flex justify-end">
-                          <Button type="submit">Submit</Button>
+                          <Button type="submit" className="h-10 sm:h-11">Submit</Button>
                         </div>
                       </form>
                     </DialogContent>
                   </Dialog>
-                  <Button className="w-full" variant="outline">
+                  <Button className="w-full h-10 sm:h-11 text-sm" variant="outline">
                     View Details
                   </Button>
                   {success && (
-                    <div className="text-green-600 text-sm text-center mt-2">Thank you! Your request has been submitted.</div>
+                    <div className="text-green-600 text-xs sm:text-sm text-center mt-2">Thank you! Your request has been submitted.</div>
                   )}
                 </div>
               </div>
@@ -275,18 +278,22 @@ const Collection = () => {
 
         {/* Empty State */}
         {filteredStones.length === 0 && (
-          <div className="text-center py-16">
-            <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-muted flex items-center justify-center">
-              <Search className="w-8 h-8 text-muted-foreground" />
+          <div className="text-center py-12 lg:py-16">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 rounded-full bg-muted flex items-center justify-center">
+              <Search className="w-6 h-6 sm:w-8 sm:h-8 text-muted-foreground" />
             </div>
-            <h3 className="text-xl font-semibold text-foreground mb-2">No stones found</h3>
-            <p className="text-muted-foreground mb-6">
+            <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-2">No stones found</h3>
+            <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">
               Try adjusting your search or filter criteria
             </p>
-            <Button variant="outline" onClick={() => {
-              setSearchTerm("");
-              setSelectedCategory("All");
-            }}>
+            <Button 
+              variant="outline" 
+              onClick={() => {
+                setSearchTerm("");
+                setSelectedCategory("All");
+              }}
+              className="h-10 sm:h-11"
+            >
               Clear Filters
             </Button>
           </div>

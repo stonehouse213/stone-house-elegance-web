@@ -54,11 +54,15 @@ All colors MUST be HSL.
     --shadow-card: 0 10px 30px -5px hsl(0 0% 0% / 0.3);
     --shadow-glow: 0 0 40px hsl(45 85% 55% / 0.2);
 
-    /* Typography scale */
-    --font-hero: 4.5rem;
-    --font-heading: 3rem;
-    --font-subheading: 1.5rem;
-    --font-body: 1rem;
+    /* Responsive Typography scale - Mobile First */
+    --font-hero: clamp(2.5rem, 8vw, 4.5rem);
+    --font-heading: clamp(2rem, 6vw, 3rem);
+    --font-subheading: clamp(1.125rem, 4vw, 1.5rem);
+    --font-body: clamp(0.875rem, 2.5vw, 1rem);
+    
+    /* Responsive spacing */
+    --section-padding: clamp(3rem, 8vw, 6rem);
+    --container-padding: clamp(1rem, 4vw, 2rem);
     
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -73,5 +77,67 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-size: var(--font-body);
+    line-height: 1.6;
+  }
+
+  /* Responsive container improvements */
+  .container {
+    @apply px-4 sm:px-6 lg:px-8;
+    max-width: 100%;
+  }
+
+  /* Improved touch targets for mobile */
+  button, a, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Better text rendering on mobile */
+  h1, h2, h3, h4, h5, h6 {
+    text-rendering: optimizeLegibility;
+    -webkit-font-feature-settings: "kern" 1;
+    font-feature-settings: "kern" 1;
+  }
+
+  /* Smooth scrolling for better mobile experience */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Prevent horizontal scroll on mobile */
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* Responsive utilities */
+@layer utilities {
+  .text-responsive-hero {
+    font-size: var(--font-hero);
+    line-height: 1.1;
+    font-weight: 700;
+  }
+  
+  .text-responsive-heading {
+    font-size: var(--font-heading);
+    line-height: 1.2;
+    font-weight: 600;
+  }
+  
+  .text-responsive-subheading {
+    font-size: var(--font-subheading);
+    line-height: 1.4;
+    font-weight: 500;
+  }
+  
+  .section-padding {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+  }
+  
+  .container-padding {
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
   }
 }

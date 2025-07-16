@@ -34,28 +34,28 @@ const MaterialsSection = () => {
   ];
 
   return (
-    <section className="py-24 px-6 bg-background">
+    <section className="section-padding container-padding bg-background">
       <div className="max-w-7xl mx-auto">
         
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-heading text-foreground mb-6">
+        <div className="text-center mb-12 lg:mb-16">
+          <h2 className="text-responsive-heading text-foreground mb-4 lg:mb-6">
             Materials & Inventory
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-responsive-subheading text-muted-foreground max-w-3xl mx-auto px-4 sm:px-0">
             Explore our carefully curated collection of premium natural stone materials, 
             each selected for its exceptional quality and unique character.
           </p>
         </div>
 
         {/* Materials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {materials.map((material, index) => (
             <div key={material.title} className="group">
-              <div className="bg-card rounded-lg overflow-hidden shadow-card hover:shadow-luxury transition-all duration-500 transform hover:-translate-y-2">
+              <div className="bg-card rounded-lg overflow-hidden shadow-card hover:shadow-luxury transition-all duration-500 transform hover:-translate-y-2 h-full flex flex-col">
                 
                 {/* Image */}
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden">
                   <img 
                     src={material.image} 
                     alt={material.title}
@@ -65,20 +65,20 @@ const MaterialsSection = () => {
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-foreground mb-3">
+                <div className="p-4 sm:p-6 flex-1 flex flex-col">
+                  <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-3">
                     {material.title}
                   </h3>
                   
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                  <p className="text-sm sm:text-base text-muted-foreground mb-4 leading-relaxed flex-1">
                     {material.description}
                   </p>
 
                   {/* Features */}
-                  <div className="space-y-2 mb-6">
+                  <div className="space-y-2 mb-4 lg:mb-6">
                     {material.features.map((feature) => (
-                      <div key={feature} className="flex items-center text-sm text-muted-foreground">
-                        <div className="w-1.5 h-1.5 bg-secondary rounded-full mr-3" />
+                      <div key={feature} className="flex items-center text-xs sm:text-sm text-muted-foreground">
+                        <div className="w-1.5 h-1.5 bg-secondary rounded-full mr-3 flex-shrink-0" />
                         {feature}
                       </div>
                     ))}
@@ -86,7 +86,7 @@ const MaterialsSection = () => {
 
                   <Button 
                     variant="outline" 
-                    className="w-full group-hover:bg-secondary group-hover:text-secondary-foreground transition-all duration-300"
+                    className="w-full group-hover:bg-secondary group-hover:text-secondary-foreground transition-all duration-300 h-10 sm:h-11 text-sm"
                     asChild
                   >
                     <Link to="/collection">Discover Collection</Link>
@@ -98,8 +98,13 @@ const MaterialsSection = () => {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-16">
-          <Button variant="luxury" size="lg" asChild>
+        <div className="text-center mt-12 lg:mt-16">
+          <Button 
+            variant="luxury" 
+            size="lg" 
+            className="w-full sm:w-auto min-w-[200px] h-12 sm:h-11 text-base sm:text-sm"
+            asChild
+          >
             <Link to="/collection">View Complete Inventory</Link>
           </Button>
         </div>
